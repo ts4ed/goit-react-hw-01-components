@@ -28,6 +28,7 @@ export default function TransactionHistory({ items }) {
 }
 
 TransactionHistory.propTypes = {
+  id: PropTypes.string,
   type: PropTypes.string,
   amount: PropTypes.number,
   currency: PropTypes.string,
