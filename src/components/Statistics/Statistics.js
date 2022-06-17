@@ -7,7 +7,11 @@ export default function Statistics({ title, stats }) {
 
       <ul className={s.stat_list}>
         {stats.map(stat => (
-          <li className={s.item} key={stat.id}>
+          <li
+            className={s.item}
+            key={stat.id}
+            style={{ backgroundColor: generateHEX() }}
+          >
             <span className={s.label}>{stat.label}</span>
             <span className={s.percentage}>{stat.percentage}%</span>
           </li>
@@ -27,3 +31,12 @@ Statistics.propTypes = {
     })
   ),
 };
+
+function generateHEX() {
+  const chart = '0123456789ABCDEF';
+  let hex = '#';
+  for (let i = 0; i < 6; i++) {
+    hex += chart[Math.floor(Math.random() * 16)];
+  }
+  return hex;
+}
